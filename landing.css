@@ -49,13 +49,19 @@ nav .container {
   font-size: 18px;
 }
 
-.nav-links a:hover {
+/* .nav-links a:hover {
   color: black;
   font-size: 25px;
   transition: 0.5s;
+} */
+
+.nav-links a:hover {
+  color: black;
+  transform: scale(1.1);
 }
 
-/* HERO */
+
+
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -232,4 +238,103 @@ footer {
     grid-template-columns: 1fr;
   }
 
+}
+
+
+
+
+
+
+
+/*added css */
+
+
+
+/* SCROLL ANIMATION */
+.card,
+.project,
+.stack-item,
+.about-content {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* HERO ANIMATION */
+.hero h1 {
+  animation: slideDown 1s ease;
+}
+
+.hero p {
+  animation: fadeIn 2s ease;
+}
+
+.btn {
+  animation: fadeIn 3s ease;
+}
+
+
+/* FLOATING IMAGE */
+ /*.about-content img {
+  animation: float 1s ease-out;
+} */
+
+
+/* STACK HOVER */
+.stack-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 20px rgb(224,109,14);
+}
+
+
+/* PROJECT CARD HOVER */
+.card:hover,
+.project:hover {
+  transform: scale(1.02);
+  transition: 0.4s;
+  box-shadow: 0 0 20px rgba(224,109,14,0.5);
+}
+
+
+/* KEYFRAMES */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
