@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +7,10 @@
 
   
   <link rel="stylesheet" href="landing.css">
+
+
+
+
 </head>
 <body>
 
@@ -38,7 +34,7 @@
       Front-End Web Developer & Freelancer building modern,
       responsive web applications.
     </p>
-    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+    <a href="mailto:ammasivilmar2@gmail.com"
        target="_blank"
        class="btn">
        Contact Me
@@ -54,9 +50,9 @@
     <div class="about-content">
       <div>
         <p class="intro">
-          I'm a passionate Front-End Developer specializing in building
-          efficient, accessible, and user-friendly web applications
-          using modern technologies.
+        Hi! I'm Vilmar, a passionate Front-End Web Developer with a strong interest in creating responsive,
+          accessible, and user-focused web applications. Skilled in HTML, CSS, JavaScript, and basic Git workflows,
+          I continuously strive to learn modern web technologies and improve my problem-solving abilities.
         </p>
         <p class="intro">
           I enjoy solving problems and turning ideas into interactive
@@ -80,8 +76,10 @@
     <div class="card">
       <h3>Freelance Web Developer (2023 - Present)</h3>
       <ul>
+        <li> Developed and completed programming projects and assignments for 
+          freelance clients while meeting deadlines and technical requirements.</li>
         <li>Developed responsive websites using HTML, CSS, JavaScript</li>
-        <li>Built applications using Java and Visual Basic</li>
+        <li>Built Desktop applications using Java and Visual Basic</li>
         <li>Worked directly with clients to deliver user-friendly solutions</li>
       </ul>
     </div>
@@ -101,8 +99,25 @@
     <div class="project">
       <h3>PROJECT</h3>
       <ul>
-       <li > <a href="https://hydrautech.github.io/HydrauTech/HYDRAUTECH.html#home"target="_blank">HydrauTech & Trucking Inc.</a> </li>
-       <li> <a href="https://vilmar-dev.github.io/READERSCAFE/LANDING.HTML" target="_blank">Reader's Cafe</a>
+
+        <li > <h4><a href="https://hydrautech.github.io/HydrauTech/HYDRAUTECH.html#home"target="_blank">HydrauTech & Trucking Inc. </a> </h4> - Hydrautech and Trucking Incorporated is a service company that specializes in ship repairing, trucking, and construction services. <br>- Tech used: Html,Css,Javascript </li><br>
+
+       <li> <h4> <a href="https://readerscafe.github.io/Readers/Cafe" target="_blank">Reader's Cafe</a> </h4>
+        - Readers Cafe is a cozy café that offers delicious drinks and snacks while providing a relaxing and comfortable space for customers to study, read, and unwind. <br>
+        - Tech used: Html,Css,Javascript 
+        </li> <br>
+        
+       <li> <h4>  <a href="https://vilmar-dev.github.io/AI-SelfIntroduction-Generator/" target="_blank">Ai Self Introduction Generator</a></h4>
+             - AI SelfIntroduction Generator is a web-based application that automatically creates professional and personalized self-introductions based on user input <br>- Tech used: Html,Css,Javascript
+      </li> <br>
+
+      <li> <h4> <a href="https://vilmar-dev.github.io/Toss-Coin-Games/Landing" target="_blank">Flip The Coin Game</a></h4>
+
+        -Toss Coin Game is an interactive web-based game  that simulates a virtual coin toss with responsive design and dynamic user interaction. <br>
+        -Tech used: Html,Css,Javascript
+
+      
+      </li>
         
       </ul>
     </div>
@@ -168,6 +183,35 @@
   <p>© 2026 Vilmar Ammasi | Front-End Developer</p>
 </footer>
 
+
+  <script>
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll(
+  ".card, .project, .stack-item, .about-content"
+);
+
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+  });
+});
+</script>
 </body>
 </html>
-
