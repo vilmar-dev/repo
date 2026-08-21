@@ -42,8 +42,9 @@
       Front-End Web Developer & Freelancer building modern,
       responsive web applications.
     </p>
-    <a href="mailto:ammasivilmar2@gmail.com"
+     <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ammasivilmar2@gmail.com"
        target="_blank"
+       rel="noopener noreferrer"
        class="btn">
        Get in Touch
     </a>
@@ -521,11 +522,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const menuBars = menuToggle.querySelectorAll("span");
+
+function setMenuIcon(isOpen) {
+  menuBars.forEach(bar => {
+    bar.style.display = isOpen ? "none" : "block";
+  });
+  menuBars[0].style.transform = isOpen ? "translateY(7px) rotate(45deg)" : "none";
+  menuBars[0].style.setProperty("opacity", isOpen ? "0" : "1", "important");
+  menuBars[1].style.setProperty("opacity", isOpen ? "0" : "1", "important");
+  menuBars[2].style.transform = isOpen ? "translateY(-7px) rotate(-45deg)" : "none";
+  menuBars[2].style.setProperty("opacity", isOpen ? "0" : "1", "important");
+}
 
 menuToggle.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", isOpen);
   menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  setMenuIcon(isOpen);
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
@@ -533,7 +547,17 @@ navLinks.querySelectorAll("a").forEach(link => {
     navLinks.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open navigation menu");
+    setMenuIcon(false);
   });
+});
+
+document.addEventListener("click", event => {
+  if (!event.target.closest("nav") && navLinks.classList.contains("open")) {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    setMenuIcon(false);
+  }
 });
 </script>
 </body>
